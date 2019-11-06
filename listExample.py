@@ -17,6 +17,8 @@
 # inPlace and OutPlace
 
 #inplace
+from collections import OrderedDict
+
 a = [10,20,30]
 print(id(a))
 a.append(40)
@@ -58,3 +60,12 @@ for i,j in zip(alst, blst):
 
 print(clst)
 
+print("=======================================")
+print("Removing duplicates from list by keeping the order of the list")
+
+l=[1,1,2,3,3,5,6,6,8,8,9,9,10,10]
+print("Before removing")
+print(l)
+l = list(OrderedDict(zip(l, l)).values())
+print("After removing")
+print(l)
